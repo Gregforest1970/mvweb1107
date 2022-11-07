@@ -17,7 +17,7 @@ public class ProductDAO {
         ArrayList list = new ArrayList();
 String query = "SELECT productCode  as  code , quantityInStock  as  quantity, productDescription  as  description,  buyPrice  as  price  FROM  Products  where buyPrice>=90.0 "; 
         try {    
-            Class.forName("com.mysql.jc.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(url,username,password);
             stmt = conn.createStatement();
             rs = stmt.executeQuery(query);
